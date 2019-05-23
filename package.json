@@ -1,0 +1,36 @@
+{
+  "name": "libubsub",
+  "version": "0.1.0",
+  "description": "Library to support common ubsub functionality and authentication",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run lint",
+    "lint": "eslint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ubsub/libubsub.git"
+  },
+  "keywords": [
+    "ubsub",
+    "pubsub",
+    "event",
+    "router",
+    "socketio"
+  ],
+  "author": "Chris LaPointe",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ubsub/libubsub/issues"
+  },
+  "homepage": "https://github.com/ubsub/libubsub#readme",
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.17.2"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "lodash": "^4.17.11"
+  }
+}
