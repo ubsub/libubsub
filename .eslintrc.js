@@ -3,6 +3,7 @@ module.exports = {
     commonjs: true,
     es6: true,
     node: true,
+    mocha: true,
   },
   extends: 'airbnb-base',
   globals: {
@@ -13,5 +14,7 @@ module.exports = {
     ecmaVersion: 2018,
   },
   rules: {
+    "max-len" : ["warn", 200],
+    "no-underscore-dangle" : "off",
   },
 };
