@@ -11,7 +11,7 @@ module.exports = {
   validateSignature(appDomain, routerUrl = config.ROUTER_URL) {
     if (!appDomain) throw new Error('appDomain arg is required for safe signature validation');
 
-    const signatureValidator = new RouterSignature(routerUrl, { audience: appDomain });
+    const signatureValidator = new RouterSignature({ audience: appDomain }, routerUrl);
 
     return (req, res, next) => {
       signatureValidator.assertValidJwt(req.get('X-Router-Signature'))
