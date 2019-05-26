@@ -14,7 +14,7 @@ const config = require('./config');
  * Public certificate is automatically retrieved and cached
  * Future retrievals will be pre-fetched to minimize any interruptions
  */
-export default class Signature {
+class Signature {
   /**
    * @param  {object} verifyOpts - Arguments passed to the JWT verifier
    * @param  {string} routerUrl - Override the default router_url
@@ -58,3 +58,5 @@ export default class Signature {
       }));
   }
 }
+
+module.exports = Signature;
