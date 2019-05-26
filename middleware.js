@@ -4,14 +4,16 @@ const config = require('./config');
 module.exports = {
 
   /**
+   * Create middleware that validates `X-Router-Signature`
+   *
    * @param  {string} appDomain - Expected app domain of the JWT to pass validation (usually the domain the request is sent o)
-   * @param  {string} routerUrl - Defaults to router.ubsub.io. Override URL to router
+   * @param  {object} additionalVerifyOpts - additional options to pass verifier
    * @return {express middleware} Returns a new middleware to be used in express
    */
-  validateSignature(appDomain, routerUrl = config.ROUTER_URL) {
+  validateSignature(appDomain, additionalVerifyOpts = {}) {
     if (!appDomain) throw new Error('appDomain arg is required for safe signature validation');
 
-    const signatureValidator = new RouterSignature({ audience: appDomain }, routerUrl);
+    const signatureValidator = new RouterSignature(Object.assign({ audience: appDomain }, additionalVerifyOpts));
 
     return (req, res, next) => {
       signatureValidator.assertValidJwt(req.get('X-Router-Signature'))

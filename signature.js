@@ -35,6 +35,9 @@ class Signature {
   }
 
   /**
+   * Retrieves the public key from the router
+   * Will also have memoized function `getCachedPublicKey`
+   *
    * @return {string} The router's public key
    */
   getPublicKey() {
@@ -43,6 +46,8 @@ class Signature {
   }
 
   /**
+   * Returns a promise in resolve/reject that respects the validity of the JWT
+   *
    * @param  {string} token - The JWT to validate
    * @return {promise} Either the parsed body of the JWT payload, or a rejection on failure
    */
