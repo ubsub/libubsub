@@ -1,5 +1,4 @@
 const RouterSignature = require('./signature');
-const config = require('./config');
 
 module.exports = {
 

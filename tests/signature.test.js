@@ -13,9 +13,7 @@ describe('#signature', () => {
 
   it('Should accept a valid JWT token', () => sig.assertValidJwt(VALID_CERT));
 
-  it('Should reject an invalid token', () => {
-    return assert.isRejected(sig.assertValidJwt(TYPO_INVALID_CERT));
-  });
+  it('Should reject an invalid token', () => assert.isRejected(sig.assertValidJwt(TYPO_INVALID_CERT)));
 
   it('Should reject a token with a bad issuer', () => {
     const sigIssuer = new Signature({ ignoreExpiration: true }, config.ROUTER_URL, 'bad-issuer');
