@@ -1,4 +1,4 @@
-# [libubsub](https://github.com/ubsub/libubsub#readme) *0.1.2*
+# [libubsub](https://github.com/ubsub/libubsub#readme) *0.1.3*
 
 > Library to support common ubsub functionality and authentication
 
@@ -380,6 +380,7 @@ Create middleware that validates `X-Router-Signature`
 | ---- | ---- | ----------- | -------- |
 | appDomain | `string`  | - Expected app domain of the JWT to pass validation (usually the domain the request is sent o) | &nbsp; |
 | additionalVerifyOpts | `object`  | - additional options to pass verifier | &nbsp; |
+| routerUrl&#x3D;config.ROUTER_URL | `string`  | Optional override for router url | *Optional* |
 
 
 
