@@ -7,7 +7,7 @@ module.exports = {
    *
    * @param  {string} appDomain - Expected app domain of the JWT to pass validation (usually the domain the request is sent o)
    * @param  {object} additionalVerifyOpts - additional options to pass verifier
-   * @return {express middleware} Returns a new middleware to be used in express
+   * @return {expressMiddleware} Returns a new middleware to be used in express
    */
   validateSignature(appDomain, additionalVerifyOpts = {}) {
     if (!appDomain) throw new Error('appDomain arg is required for safe signature validation');

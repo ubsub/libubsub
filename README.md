@@ -13,7 +13,56 @@ Its primary goals are to simplify:
  - Validating signatures
  - Simplifying complex systems (SocketIO) and wrapping in ubsub terminology
 
-## Functions
+# Functions
+
+## Express Middleware
+
+The express middleware inspects the signature that comes in on the router via `X-Router-Signature`, and denies
+the request if it's not a wholly valid signature (Expiration, app domain, source, etc..)
+
+```js
+const { middleware } = require('libubsub');
+
+// express stuff..
+
+app.use(middleware.validateSignature('my.domain'));
+
+```
+
+### Signature Validator
+
+If you wish to use the signature validation directly, you can use the `signature` class.
+
+The signature class should do a good job retrieving and pre-fetching the public key from the router. By default,
+this happens every 15 minutes (see: `config.js`).
+
+You can also read more about the JWT signature in the [ubsub docs](https://app.ubsub.io/docs/advanced/router/).
+
+```js
+const { Signature } = require('libubsub');
+
+const signatureValidator = new Signature();
+
+// Returns promise that was either rejected or resolved depending on validity
+// If resolved, contains the JWT object
+signatureValidator.assertValidJwt(tokenString);
+```
+
+### Client API
+
+We also bundle a client API wrapper for the router built on top of [axios](https://www.npmjs.com/package/axios).
+
+```js
+const { api } = require('libubsub');
+
+const userId = '...';
+const userKey = '...';
+const client = api(userId, userKey);
+
+client.getUser();
+```
+
+You can see the full list of functions in [api.js](api.js)
 
 # License
 
