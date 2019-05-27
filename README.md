@@ -15,6 +15,8 @@ Its primary goals are to simplify:
 
 # Functions
 
+To see a complete list of functions, please see [DOCUMENTATION.md](DOCUMENTATION.md)
+
 ## Express Middleware
 
 The express middleware inspects the signature that comes in on the router via `X-Router-Signature`, and denies
