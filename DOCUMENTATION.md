@@ -1,4 +1,4 @@
-# [libubsub](https://github.com/ubsub/libubsub#readme) *0.1.0*
+# [libubsub](https://github.com/ubsub/libubsub#readme) *0.1.1*
 
 > Library to support common ubsub functionality and authentication
 

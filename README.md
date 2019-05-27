@@ -3,6 +3,7 @@
 [![Build Status](https://travis-ci.org/ubsub/libubsub.svg?branch=master)](https://travis-ci.org/ubsub/libubsub)
 [![npm](https://img.shields.io/npm/v/libubsub.svg)](https://www.npmjs.com/package/libubsub)
 [![npm](https://img.shields.io/npm/l/libubsub.svg)](https://www.npmjs.com/package/libubsub)
+[![Latest Documentation](https://doxdox.org/images/badge-flat.svg)](https://doxdox.org/)
 
 libubsub provides a common set of functionality to connect and consume ubsub's API and pub/sub events.
 
