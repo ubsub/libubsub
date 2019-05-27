@@ -481,4 +481,148 @@ Returns a promise in resolve/reject that respects the validity of the JWT
 
 
 
+### streaming.js
+
+
+#### module.exports(userId, userKey, ubsubOpts) 
+
+Create a new streaming client for a given user or token
+
+
+
+
+##### Parameters
+
+| Name | Type | Description |  |
+| ---- | ---- | ----------- | -------- |
+| userId | `string`  | - User or token ID | &nbsp; |
+| userKey | `string`  | - User or token key | &nbsp; |
+| ubsubOpts | `object`  | - Optional arguments to override streaming defaults { socketHost, routerHost, reconnectOnError, reconnectOnErrorDelay } | &nbsp; |
+
+
+
+
+##### Returns
+
+
+- `object`  functions to be used with the given config
+
+
+
+#### listen(topicId, onEvent) 
+
+Listen to a given topic and pipe events through a callback
+
+
+
+
+##### Parameters
+
+| Name | Type | Description |  |
+| ---- | ---- | ----------- | -------- |
+| topicId | `string`  | - the ID of the topic to listen to | &nbsp; |
+| onEvent | `function`  | - Function callback when event received (payload, metadata) | &nbsp; |
+
+
+
+
+##### Returns
+
+
+- `object`  the SocketIO socket
+
+
+
+#### pipe(topicId, topicKey) 
+
+Provide a function to quickly pipe events into an ubsub topic
+
+
+
+
+##### Parameters
+
+| Name | Type | Description |  |
+| ---- | ---- | ----------- | -------- |
+| topicId | `string`  | - the topicId to post to | &nbsp; |
+| topicKey | `string`  | - Optional topic key | &nbsp; |
+
+
+
+
+##### Returns
+
+
+- `function`  Returns a function that can be called with an object and posted to an ubsub socket
+
+
+
+#### forward(topicId, forwardUrl, httpOpts) 
+
+Create a forwarding-stream that moves events from a socket to a HTTP endpoint
+
+
+
+
+##### Parameters
+
+| Name | Type | Description |  |
+| ---- | ---- | ----------- | -------- |
+| topicId | `string`  | - ID of the topic to listen to | &nbsp; |
+| forwardUrl | `string`  | - HTTP url to forward events to | &nbsp; |
+| httpOpts | `object`  | - Optional additional httpOpts to send axios | &nbsp; |
+
+
+
+
+##### Returns
+
+
+- `object`  The socket used to listen
+
+
+
+#### send(topicId, key, data[, method&#x3D;&quot;POST&quot;]) 
+
+Send an event to a topic
+
+
+
+
+##### Parameters
+
+| Name | Type | Description |  |
+| ---- | ---- | ----------- | -------- |
+| topicId | `string`  | - Topic to send to | &nbsp; |
+| key | `string`  | - Topic key to authenticate against | &nbsp; |
+| data | `object`  | - Data to send to the topic | &nbsp; |
+| method&#x3D;&quot;POST&quot; | `String`  | What method to send to the topic with | *Optional* |
+
+
+
+
+##### Returns
+
+
+- `promise`  Axios promise
+
+
+
+#### getApi() 
+
+Gets a new API client based on the current user id and key
+
+
+
+
+
+
+##### Returns
+
+
+- `Client`  API Client
+
+
+
+
 *Documentation generated with [doxdox](https://github.com/neogeek/doxdox).*
