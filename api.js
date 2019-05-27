@@ -86,7 +86,7 @@ module.exports = (userId, userKey, { routerHost = config.ROUTER_URL }) => {
     /**
      * Create a new topic. Will fail on name collision
      * @param  {string} name - Name of the topic to create
-     * @param  {Boolean/string} key - True if want key, false if not key, or string for specific key
+     * @param  {Boolean_string} key - True if want key, false if not key, or string for specific key
      * @return {object} Topic
      */
     createTopic(name, key = true) {
@@ -134,7 +134,7 @@ module.exports = (userId, userKey, { routerHost = config.ROUTER_URL }) => {
      * Update information on template
      * @param  {string} id - Id of template to update
      * @param  {object} {name, language, source} - Optional pieces to update for template
-     * @return {[type]} template
+     * @return {object} template
      */
     updateTemplate(id, { name, language, source }) {
       if (!id) return Promise.reject(Error('No such template'));

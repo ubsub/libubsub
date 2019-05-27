@@ -5,7 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha --recursive tests/",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "docs": "doxdox '*.js' --layout markdown --output DOCUMENTATION.md",
+    "prepublishOnly": "npm run docs",
+    "release": "npm version patch && git push && git push --tags && npm publish"
   },
   "repository": {
     "type": "git",
@@ -27,6 +30,7 @@
   "devDependencies": {
     "chai": "^4.2.0",
     "chai-as-promised": "^7.1.1",
+    "doxdox": "^3.0.0",
     "eslint": "^5.16.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.17.2",
