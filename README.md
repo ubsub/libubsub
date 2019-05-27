@@ -14,6 +14,12 @@ Its primary goals are to simplify:
  - Validating signatures
  - Simplifying complex systems (SocketIO) and wrapping in ubsub terminology
 
+# Installing
+
+```bash
+npm install --save libubsub
+```
+
 # Functions
 
 To see a complete list of functions, please see [DOCUMENTATION.md](DOCUMENTATION.md)
