@@ -7,7 +7,7 @@
     "test": "mocha --recursive tests/",
     "lint": "eslint .",
     "docs": "doxdox '*.js' --layout markdown --output DOCUMENTATION.md",
-    "prepublishOnly": "npm run docs && git commit -m 'Update docs' DOCUMENTATION.md",
+    "prepublishOnly": "npm run docs && git commit -m 'Update docs' DOCUMENTATION.md && git push",
     "release": "npm version patch && git push && git push --tags && npm publish"
   },
   "repository": {
