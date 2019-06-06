@@ -4,6 +4,7 @@
 [![npm](https://img.shields.io/npm/v/libubsub.svg)](https://www.npmjs.com/package/libubsub)
 [![npm](https://img.shields.io/npm/l/libubsub.svg)](https://www.npmjs.com/package/libubsub)
 [![Latest Documentation](https://doxdox.org/images/badge-flat.svg)](https://doxdox.org/)
+![Snyk Vulnerabilities for npm package](https://img.shields.io/snyk/vulnerabilities/npm/libubsub.svg)
 
 libubsub provides a common set of functionality to connect and consume ubsub's API and pub/sub events.
 
