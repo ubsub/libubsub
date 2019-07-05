@@ -1,6 +1,6 @@
 {
   "name": "libubsub",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Library to support common ubsub functionality and authentication",
   "main": "index.js",
   "scripts": {
