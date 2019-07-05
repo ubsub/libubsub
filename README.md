@@ -39,6 +39,21 @@ app.use(middleware.validateSignature('my.domain'));
 
 ```
 
+### Validating the body
+
+Once the signature has been validated, it is then safe to parse and validate the request body.  The initial
+step won't validate the body for you, for two reasons: 1) We don't want to assume that there is a body, and 2)
+we don't want to have to parse the body before we know if it comes from a safe place.
+
+To validate the body, `validateSignatureHash` **must** be called after any *body-parsing* and `validateSignature`, as
+it expects `req.body` and `req.routerSignature` to be populated.
+
+```js
+app.use(middleware.validateSignature('example.com'));
+app.use(bodyParser.json());
+app.use(middleware.validateBodyHash());
+````
+
 ### Signature Validator
 
 If you wish to use the signature validation directly, you can use the `signature` class.
