@@ -1,4 +1,4 @@
-# [libubsub](https://github.com/ubsub/libubsub#readme) *0.1.4*
+# [libubsub](https://github.com/ubsub/libubsub#readme) *0.1.5*
 
 > Library to support common ubsub functionality and authentication
 
@@ -389,6 +389,24 @@ Create middleware that validates `X-Router-Signature`
 
 
 - `expressMiddleware`  Returns a new middleware to be used in express
+
+
+
+#### validateBodyHash() 
+
+Middleware that will validate signature hash against the `req.body`
+This will make sure that nothing has changed since the router has sent the payload
+MUST be run after the `validateSignature` middleware
+
+
+
+
+
+
+##### Returns
+
+
+- `expressMiddleware`  Returns a middleware that validates `req.routerSignaure.hash` against the body
 
 
 
